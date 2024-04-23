@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #830e0e;
+        }
+        section{
+            display: block;
+            position: relative;
+            box-shadow: 1px 1px 5px black;
+            width: 300px; 
+            height: 450px;   
+            left: 25px;   
+            background-color: #cc0202;     
+        }
+       
+        #res {  /* div principal */
+            margin-top: 20px;
+            border: 1px solid;
+            position: relative;
+            left: 25px;
+            width: 200px;
+            height: 190px;
+            background-color: black;
+            box-shadow: 1px 1px 5px black;
+            border: 25px solid #bdbcbc;
+            border-bottom-left-radius: 30px;
+        }
+           
+        #res1 {
+            margin-top: 5px;
+            text-align: center;
+        }
+        p {
+            background-color: black;
+            position: relative;
+            border: 10px solid #bdbcbc;
+            color: #bdbcbc;
+            margin-top: 0px;
+            width: 180px;
+            left: 50px;
+        }
+        
+        header{
+            display: inline-flex;
+            position: relative;
+            left: 25px;
+            width: 300px;
+            box-shadow: 1px 1px 5px black;
+            background-color: #cc0202;
+        }
+        .grande{
+            background-image: linear-gradient(to left, #0202ff, #5555d6 ) ;
+            margin-right: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border-style: none;  
+            margin: 10px;   
+            border: 5px solid #bdbcbc;
+        }
+        .pequeno1{
+            margin-right: 10px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50px;
+            border-style: none;
+            margin: 10px;
+            background-color: red;
+            border: 1px solid black;
+        }
+        .pequeno2{
+            margin-right: 10px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50px;
+            border-style: none;
+            margin: 10px;
+            background-color: rgb(218, 218, 19);
+            border: 1px solid black;
+        }
+        .pequeno3{
+            margin-right: 10px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50px;
+            border-style: none;
+            margin: 10px;
+            background-color: green;
+            border: 1px solid black;
+        }
+        .procure{
+            text-align: center;
+            margin-top: 0px;
+            font-size: 25px;
+            position: relative;
+            top: 10px;
+        }
+        .digitepokem{
+            margin-left: 25px;
+            width: 170px;
+            height: 20px;
+            box-shadow: 1px 2px 5px black;
+            border-style: none;
+            border-radius: 5px;
+        }
+        .enviar{
+            margin-left: 25px;
+            height: 20px;
+            box-shadow: 1px 2px 5px black;
+            border-style: none;
+            border-radius: 5px;
+        }
+        img {
+            width: 200px;
+            height: 190px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <button class="grande" disabled="disabled"></button>
+        <button class="pequeno1" disabled="disabled"></button>
+        <button class="pequeno2" disabled="disabled"></button>
+        <button class="pequeno3" disabled="disabled"></button>
+    </header>
+
+    <section>
+        <h1 class="procure">Procure seu Pokemon</h1>
+
+        <select class="digitepokem" name="pokemon" id="ipoke" placeholder="digite aqui">
+            <option value="selecione aqui" id="ipoke">Selecione aqui</option>
+            <option value="pikachu" id="ipoke">pikachu</option>
+            <option value="bulbossauro" id="ipoke">bulbossauro</option>
+            <option value="charizard" id="ipoke">charizard</option>
+            <option value="esguitaruga" id="ipoke">esguitaruga</option>
+            <option value="pidgey" id="ipoke">pidgey</option>
+            
+        </select>
+
+        <input class="enviar" type="button" value="Enviar" onclick="enviar()"> <br>
+        
+        <div id="res">
+            
+        </div>
+        <div id="res1">
+            
+        </div>
+    </section>
+   
+    <script>
+        function enviar() {
+            let camp = document.getElementById('ipoke').value
+            let res = document.getElementById('res')
+            let p = 'pikachu'
+            let b = 'bulbossauro'
+            let c = 'charizard'
+            let e = 'esguitaruga'
+            let pi = 'pidgey'
+            let v = 'selecione aqui'
+
+            if(camp === v) {
+                res.innerHTML = '' 
+                res1.innerHTML = ''                
+            }
+
+            if(camp === p) {
+                res.innerHTML = `<img src="imagens/pikachu.png" alt=""> ` 
+                res1.innerHTML = `<p>Nome: Pikachu, <br> Altura: 0.4m,<br> peso: 6.0kg,<br> Categoria: Rato,<br> Poder: Raio do Trovão </p>`                
+            }
+
+            if(camp === b) {
+                res.innerHTML = `<img src="imagens/bulbossauro.jpeg" alt="">`
+                res1.innerHTML = `<p>Nome: Bulbossauro, <br> Altura: 0.7m,<br> peso: 6.9kg,<br> Categoria: Semente,<br> Poder: crescimento </p>`                 
+            }
+
+            if(camp === c) {
+                res.innerHTML = `<img src="imagens/charizard.jpeg" alt="">`
+                res1.innerHTML = `<p>Nome: Charizard, <br> Altura: 1.7m,<br> peso: 90.5kg,<br> Categoria: Chama,<br> Poder: Chama </p>`                
+            }
+
+            if(camp === e) {
+                res.innerHTML = `<img src="imagens/esguitaruga.jpeg" alt="">` 
+                res1.innerHTML = `<p>Nome: Esguitaruga, <br> Altura: 0.5m,<br> peso: 9.0kg,<br> Categoria: tartaruga,<br> Poder: Jato de d'agua </p>`                
+            }
+
+            if(camp === pi) {
+                res.innerHTML = `<img src="imagens/pidgey.jpeg" alt="">`    
+                res1.innerHTML = `<p>Nome: Pidgey, <br> Altura: 0.3m,<br> peso: 1.8kg,<br> Categoria: pássaro,<br> Poder: olhos aguçados </p>`             
+            }
+        }
+
+       
+    </script>
+</body>
+</html>
